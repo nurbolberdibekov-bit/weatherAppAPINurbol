@@ -1,0 +1,398 @@
+/* Importing Google Fonts - Montserrat */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+
+:root {
+    --surface: rgba(255, 255, 255, 0.18);
+    --border: rgba(255, 255, 255, 0.22);
+    --text: #e8f4ff;
+    --text-muted: #bcd8ff;
+    --accent: #53d5f5;
+    --card-shadow: 0 18px 40px rgba(7, 16, 56, 0.25);
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 32px 20px;
+    background: radial-gradient(circle at 20% 20%, #123d92, #0a173f 40%),
+    linear-gradient(180deg, #0d2e71 0%, #0079c7 50%, #00b4e6 100%);
+    color: var(--text);
+}
+
+.app-shell {
+    width: 100%;
+    max-width: 460px;
+}
+
+.container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 28px;
+    background: linear-gradient(180deg, rgba(19, 38, 101, 0.6) 0%, rgba(0, 142, 214, 0.6) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: var(--card-shadow);
+    backdrop-filter: blur(6px);
+}
+
+.search-section {
+    display: flex;
+    gap: 12px;
+    padding: 20px 22px 0;
+    align-items: center;
+}
+
+.search-section .input-wrapper {
+    height: 54px;
+    width: 100%;
+    position: relative;
+}
+
+.search-section .input-wrapper span {
+    position: absolute;
+    top: 50%;
+    left: 17px;
+    pointer-events: none;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+}
+
+.search-section .search-input {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 12px;
+    text-transform: uppercase;
+    padding: 0 18px 0 48px;
+    border: 1px solid var(--border);
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text);
+    transition: 0.2s ease;
+}
+
+.search-section .search-input:focus {
+    border-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.06);
+}
+
+.search-section .search-input::placeholder {
+    text-transform: none;
+    color: var(--text-muted);
+}
+
+.search-section .location-button {
+    height: 54px;
+    width: 56px;
+    cursor: pointer;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text);
+    border: 1px solid var(--border);
+    transition: 0.25s ease;
+}
+
+.search-section .location-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-1px);
+}
+
+.search-section .location-button span {
+    font-size: 1.3rem;
+}
+
+.glass-card {
+    margin: 18px;
+    padding: 22px 22px 26px;
+    border-radius: 26px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.05) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(16px);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    color: var(--text);
+}
+
+.card-header .city-label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    letter-spacing: 0.6px;
+    margin-bottom: 2px;
+    text-transform: uppercase;
+}
+
+.card-header .city-name {
+    font-size: 1.15rem;
+    font-weight: 700;
+}
+
+.card-header .local-date {
+    color: var(--text-muted);
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.icon-button {
+    height: 42px;
+    width: 42px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    background: rgba(255, 255, 255, 0.12);
+    color: var(--text);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.icon-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.current-weather {
+    display: flex;
+    padding: 24px 0 16px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.current-weather .weather-icon {
+    width: 120px;
+    aspect-ratio: 1;
+    filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.16));
+}
+
+.current-weather .temperature {
+    font-size: 3.6rem;
+    margin: 16px 0 8px;
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+}
+
+.current-weather .temperature span {
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.current-weather .description {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--text);
+}
+
+.current-weather .min-max {
+    margin-top: 6px;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.stat-row {
+    margin: 12px 0 10px;
+    padding: 12px;
+    border-radius: 18px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.stat {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.stat span {
+    font-size: 1.3rem;
+    color: var(--accent);
+}
+
+.stat .label {
+    color: var(--text-muted);
+    font-weight: 600;
+    font-size: 0.82rem;
+}
+
+.stat .value {
+    color: var(--text);
+    font-weight: 700;
+    font-size: 0.95rem;
+}
+
+.section {
+    margin-top: 14px;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--text);
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.section-title .today-range {
+    color: var(--text-muted);
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.hourly-weather {
+    padding: 10px 2px 6px;
+}
+
+.hourly-weather .weather-list {
+    display: grid;
+    grid-auto-flow: column;
+    gap: 14px;
+    overflow-x: auto;
+    padding: 6px 4px 10px;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.16) transparent;
+}
+
+.hourly-weather .weather-list::-webkit-scrollbar {
+    height: 8px;
+}
+
+.hourly-weather .weather-list::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 999px;
+}
+
+.hourly-weather .weather-list .weather-item {
+    min-width: 86px;
+    padding: 12px 10px;
+    border-radius: 16px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: var(--text);
+    backdrop-filter: blur(10px);
+}
+
+.hourly-weather .weather-item .weather-icon {
+    width: 32px;
+    aspect-ratio: 1;
+}
+
+.hourly-weather .weather-item .time {
+    color: var(--text-muted);
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.hourly-weather .weather-item .temperature {
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.next-forecast .daily-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.daily-list li {
+    list-style: none;
+    padding: 12px 14px;
+    border-radius: 14px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    align-items: center;
+    gap: 12px;
+}
+
+.daily-list .day {
+    font-weight: 700;
+    color: var(--text);
+}
+
+.daily-list .mini-icon {
+    width: 26px;
+}
+
+.daily-list .temps {
+    display: flex;
+    gap: 10px;
+    color: var(--text-muted);
+    font-weight: 700;
+}
+
+.no-results {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 100%;
+    display: none;
+    padding: 40px;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    transform: translate(-50%, -50%);
+    transition: 0.2s ease;
+    color: var(--text);
+}
+
+body.show-no-results .no-results {
+    display: flex;
+}
+
+.no-results .title {
+    font-weight: 700;
+    margin: 25px 0 15px;
+}
+
+.no-results .message {
+    font-weight: 500;
+    line-height: 23px;
+    color: var(--text-muted);
+}
+
+body.show-no-results .weather-section {
+    visibility: hidden;
+}
+
+/* Responsive */
+@media (max-width: 520px) {
+    body {
+        padding: 18px 12px;
+    }
+    .container {
+        border-radius: 22px;
+    }
+    .glass-card {
+        margin: 14px 12px 18px;
+    }
+    .stat-row {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+}
